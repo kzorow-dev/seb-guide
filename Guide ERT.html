@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guide ERT</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0f14; --panel:#12151b; --sage:#62755a; --sage-l:#8aa07f; --green:#2a4a24; --green-d:#1d3519;
+  --text:#c9cbc6; --title:#c4c4c0; --muted:#8d938a;
+  color-scheme:dark; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Rajdhani',system-ui,sans-serif;font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:'Anton',Impact,'Arial Narrow',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.03em;margin:0}
+nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:28px;padding:10px 24px;background:#0a0c10;border-bottom:3px solid var(--green)}
+.brand{display:flex;align-items:center;gap:12px;color:var(--title);text-decoration:none}
+.brand svg{width:40px;height:40px}
+.brand b{font-family:'Anton',Impact,sans-serif;font-weight:400;letter-spacing:.12em;font-size:20px;display:block;line-height:1}
+.brand small{font-size:11px;letter-spacing:.2em;color:var(--sage-l);text-transform:uppercase}
+nav .links{display:flex;gap:24px;flex-wrap:wrap;margin-left:16px}
+nav a.l{color:var(--text);text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.15em;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent}
+nav a.l:hover{color:var(--sage-l);border-color:var(--sage-l)}
+.hero{position:relative;background:var(--sage);padding:40px 24px 0}
+.hero-img{max-width:1100px;margin:0 auto;height:300px;border-radius:0 0 90px 0;background:linear-gradient(160deg,#0f1a2b 0%,#16233a 45%,#0a0f18 100%);display:flex;align-items:center;justify-content:center;color:#3c4d6a;letter-spacing:.3em;font-size:13px;text-transform:uppercase;border-left:14px solid var(--green)}
+.hero-band{max-width:1100px;margin:0 auto;position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:34px 0 40px 40px;min-height:200px}
+.hero-band::before{content:"";position:absolute;left:-14px;top:0;bottom:0;width:14px;background:var(--green)}
+.slant{position:absolute;left:0;top:50%;transform:translateY(-50%);width:230px;height:150px;background:linear-gradient(90deg,var(--sage-l),var(--green));clip-path:polygon(0 0,100% 0,82% 100%,0 100%);opacity:.55}
+.hero h1{position:relative;font-size:clamp(56px,11vw,120px);line-height:1;color:var(--title);text-shadow:5px 5px 0 #3a4635;margin-left:150px}
+.logo{width:150px;height:150px;flex:none;position:relative}
+.wrap{max-width:1000px;margin:0 auto;padding:70px 24px}
+.eyebrow{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--sage-l);font-weight:600}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--green)}
+.wrap h2{font-size:clamp(36px,6vw,58px);margin:10px 0 8px;color:var(--title)}
+.wrap h2 span{color:var(--sage-l)}
+.lead{color:var(--muted);margin:0 0 36px}
+.card{background:var(--panel);border:1px solid #232a22;border-left:6px solid var(--sage);padding:22px 26px;margin-bottom:18px;clip-path:polygon(0 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%)}
+.card h3{font-size:20px;color:var(--sage-l);letter-spacing:.1em;padding-bottom:10px;border-bottom:1px solid #232a22;margin-bottom:12px}
+.card p{margin:0}
+.card b{color:#e4e6e0}
+.card em{display:block;margin-top:14px;color:var(--sage-l)}
+footer{background:var(--green-d);color:var(--muted);text-align:center;padding:26px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;border-top:3px solid var(--sage)}
+@media(max-width:700px){nav{gap:12px;padding:10px 14px}nav .links{margin-left:0;gap:14px}.hero{padding:20px 14px 0}.hero-img{height:180px;border-radius:0 0 50px 0}.hero-band{padding:24px 0 30px 20px;flex-direction:column;align-items:flex-start}.hero h1{margin-left:0}.slant{display:none}.logo{width:100px;height:100px;align-self:flex-end}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="emb" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#2b2d2f" stroke="#c4c4c0" stroke-width="2"/><circle cx="50" cy="50" r="31" fill="#1d3519"/><path d="M50 22l7 20 21 1-17 12 6 21-17-12-17 12 6-21-17-12 21-1z" fill="#8aa07f"/><path id="t" d="M14 50a36 36 0 0 1 72 0" fill="none"/><text font-family="Anton,Impact,sans-serif" font-size="11" fill="#c4c4c0" letter-spacing="3" text-anchor="middle"><textPath href="#t" startOffset="50%">E.R.T</textPath></text><text x="50" y="92" font-family="Anton,Impact,sans-serif" font-size="10" fill="#c4c4c0" letter-spacing="2" text-anchor="middle">SHERIFF</text></symbol>
+</defs></svg>
+
+<nav>
+  <a class="brand" href="#accueil"><svg><use href="#emb"/></svg><span><b>E.R.T</b><small>Emergency Response Team</small></span></a>
+  <div class="links">
+    <a class="l" href="#accueil">Accueil</a>
+    <a class="l" href="#structure">Structure</a>
+    <a class="l" href="#manuel">Manuel terrain</a>
+    <a class="l" href="#documents">Documents officiels</a>
+  </div>
+</nav>
+
+<header class="hero" id="accueil">
+  <div class="hero-img">Image d’en-tête à ajouter</div>
+  <div class="hero-band">
+    <div class="slant"></div>
+    <h1>Guide ERT</h1>
+    <svg class="logo"><use href="#emb"/></svg>
+  </div>
+</header>
+
+<main>
+  <section class="wrap" id="structure">
+    <div class="eyebrow">Organisation</div>
+    <h2>Structure <span>de l’unité</span></h2>
+    <p class="lead">Présentation de l’équipe et de la chaîne de commandement.</p>
+    <div class="card"><h3>Missions</h3><p>L’ERT intervient sur les situations à <b>haut risque</b> : prises d’otages, individus retranchés, appui tactique aux unités. Texte à adapter.</p></div>
+    <div class="card"><h3>Hiérarchie</h3><p>Chef d’unité, adjoints, opérateurs et recrues. <b>Chaque ordre</b> passe par la chaîne de commandement.</p></div>
+  </section>
+
+  <section class="wrap" id="manuel" style="padding-top:0">
+    <div class="eyebrow">Procédures</div>
+    <h2>Manuel <span>terrain</span></h2>
+    <p class="lead">Règles applicables à chaque membre de l’ERT lors des interventions.</p>
+    <div class="card"><h3>Prise de service</h3><p>La prise de service est annoncée par radio après s’être <b>équipé</b>. Tenue réglementaire obligatoire. Hors service : déposer l’équipement.</p></div>
+    <div class="card"><h3>Communication radio</h3><p>Messages <b>courts et clairs</b>, un seul opérateur parle à la fois, canal dédié pendant l’opération.<em>« Silence radio, sauf urgence. »</em></p></div>
+    <div class="card"><h3>Progression tactique</h3><p>Avancer en <b>formation</b>, couvrir les angles, ne jamais s’isoler. Texte à compléter.</p></div>
+  </section>
+
+  <section class="wrap" id="documents" style="padding-top:0">
+    <div class="eyebrow">Ressources</div>
+    <h2>Documents <span>officiels</span></h2>
+    <p class="lead">Règlement, formulaires et protocoles de l’unité.</p>
+    <div class="card"><h3>Règlement intérieur</h3><p>Lien ou contenu du règlement à ajouter ici.</p></div>
+    <div class="card"><h3>Rapports d’intervention</h3><p>Modèle de rapport et consignes de rédaction à ajouter ici.</p></div>
+  </section>
+</main>
+
+<footer>E.R.T · Sheriff — Guide interne</footer>
+</body>
+</html>
