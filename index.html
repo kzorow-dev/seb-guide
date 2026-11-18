@@ -71,6 +71,20 @@ footer{margin-top:80px;background:var(--green-d);color:var(--muted);text-align:c
 .slant{top:calc(50% - 28px);opacity:.75}
 .hero h1{text-shadow:5px 5px 0 rgba(30,40,28,.9),0 0 30px rgba(0,0,0,.6)}
 @media(max-width:700px){.hero{padding:0}.hero-img.car{height:380px}.hero-band{padding:0 16px 46px;flex-direction:row;align-items:flex-end}.hero h1{font-size:clamp(44px,15vw,70px);margin-left:0}.logo.lg{width:80px;height:80px;align-self:flex-end}.slant{display:none}}
+.gp{position:fixed;top:90px;right:0;z-index:20;width:min(270px,85vw);transform:translateX(100%);transition:transform .35s ease,opacity .25s;opacity:0;pointer-events:none}
+.gp.show{opacity:1;pointer-events:auto}.gp.open{transform:translateX(0)}
+.gpt{position:absolute;left:-44px;top:0;width:44px;height:56px;border:0;border-radius:8px 0 0 8px;background:var(--green);color:var(--title);font:30px/1 Anton,Impact,sans-serif;cursor:pointer}.gpt:hover{background:var(--sage)}
+.gpc{background:var(--panel);border:1px solid #232a22;border-right:0;border-left:6px solid var(--sage);padding:18px 20px 20px;box-shadow:-8px 8px 30px rgba(0,0,0,.5)}
+.gpc h3{font-size:22px;color:var(--sage-l);letter-spacing:.1em}.gpc small{display:block;color:var(--muted);margin:2px 0 12px}
+.gpc ol{list-style:none;margin:0;padding:0;counter-reset:g}
+.gpc li{counter-increment:g;padding:8px 0;border-bottom:1px solid #232a22;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.gpc li::before{content:counter(g);display:inline-block;width:26px;color:var(--sage-l);font-family:'Anton',Impact,sans-serif}
+.gpc li:nth-child(n+7){color:var(--y)}.gpc li:last-child{border-bottom:0}
+.gpi{margin:-10px 0 24px;background:none;border:1px solid var(--sage);color:var(--sage-l);font:600 14px 'Rajdhani',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;cursor:pointer}.gpi:hover{background:var(--green);color:var(--title)}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.gpa{flex:none;width:48px;height:48px;border-radius:50%;border:2px solid var(--sage);background:var(--green-d);color:var(--title);font:32px/1 Anton,Impact,sans-serif;padding:0 0 4px;cursor:pointer;transition:background .2s}.gpa:hover{background:var(--sage)}
+.hrow{flex-wrap:wrap}.gpw{display:flex;align-items:center;gap:12px}
+.gpl{color:var(--sage-l);font:600 14px 'Rajdhani',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;user-select:none}.gpl:hover{color:var(--title)}
 </style>
 </head>
 <body>
@@ -107,7 +121,7 @@ footer{margin-top:80px;background:var(--green-d);color:var(--muted);text-align:c
 </section>
 
 <section class="wrap" id="organigramme">
-<div class="eyebrow">02 · Structure</div><h2>Organi<span>gramme</span></h2>
+<div class="eyebrow">02 · Structure</div><div class="hrow"><h2>Organi<span>gramme</span></h2><div class="gpw"><span class="gpl" id="gpl">Liste des grades</span><button class="gpa" id="gpi" type="button" aria-expanded="false" aria-label="Ouvrir ou fermer la liste des grades" title="Liste des grades">‹</button></div></div>
 <p class="lead">Chaîne de commandement et pôles de l’unité.</p>
 <div class="org">
 <div class="top"><b>Directeur SEB</b>David 60 – Ross</div>
@@ -182,6 +196,15 @@ d.forEach(function(x,k){x.onclick=function(){go(k);run()}});
 var x0=null;c.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
 c.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){go(dx<0?i+1:i-1);run()}x0=null});
 run()})();
+</script>
+<aside id="gp" class="gp" aria-label="Liste des grades"><div class="gpc"><h3>Liste des grades</h3><small>Du plus bas au plus haut</small><ol><li>Réservistes</li><li>Deputy Officer</li><li>Operator</li><li>Sergeant</li><li>Lieutenant</li><li>Captain</li><li>Lead</li><li>Directeur</li></ol></div></aside>
+<script>
+(function(){var p=document.getElementById('gp'),b=document.getElementById('gpi'),s=document.getElementById('organigramme');
+function set(o){p.classList.toggle('open',o);b.textContent=o?'›':'‹';b.setAttribute('aria-expanded',o)}
+function tog(){set(!p.classList.contains('open'))}
+b.onclick=tog;document.getElementById('gpl').onclick=tog;
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+new IntersectionObserver(function(en){var v=en[0].isIntersecting;p.classList.toggle('show',v);if(!v)set(false)},{threshold:.1}).observe(s)})();
 </script>
 </body>
 </html>
