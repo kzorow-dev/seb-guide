@@ -98,6 +98,48 @@ footer{margin-top:80px;background:var(--green-d);color:var(--muted);text-align:c
 ::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,var(--y),var(--sage))}
 @supports not selector(::-webkit-scrollbar){html{scrollbar-width:thin;scrollbar-color:var(--sage) #0a0c10}}
 .sp{position:fixed;top:0;left:0;height:3px;width:0;z-index:40;background:linear-gradient(90deg,var(--sage-l),var(--y));box-shadow:0 0 10px rgba(255,224,102,.5);pointer-events:none}
+.cx{display:grid;grid-template-columns:minmax(230px,1fr) 1.5fr;gap:18px;margin-bottom:30px}
+.fl{display:grid;gap:10px;align-content:start}
+.fb{cursor:pointer;width:100%;text-align:left;font:inherit;color:inherit;background:var(--panel);border:1px solid #232a22;border-left:6px solid #2f3a2c;padding:12px 16px;transition:background .2s,border-color .2s}
+.fb:hover{border-left-color:var(--sage)}.fb.on{border-left-color:var(--y);background:var(--green-d)}
+.fb b{display:block;font:400 19px 'Anton',Impact,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--title)}.fb.on b{color:var(--y)}
+.fb small{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-l)}
+.fv{background:var(--panel);border:1px solid #232a22;border-left:6px solid var(--sage);padding:18px 22px}
+.rd{width:100%;max-height:300px;display:block;background:radial-gradient(circle at 50% 50%,#142016,transparent 70%)}
+.rd .ring{fill:none;stroke:#27322b;stroke-width:1}
+.ag{transition:none}.rd.anim .ag{transition:transform .6s cubic-bezier(.3,.8,.3,1)}
+.ag circle{fill:rgba(95,224,232,.2);stroke:var(--c);stroke-width:2.5}
+.ag text{fill:var(--c);font:700 15px Rajdhani,sans-serif;text-anchor:middle;dominant-baseline:central}
+.fv h3{font-size:26px;color:var(--title);margin-top:10px}.fv .tg{display:block;color:var(--y);letter-spacing:.18em;text-transform:uppercase;font-size:13px;font-weight:600}.fv p{margin:8px 0 0}
+.tree{display:flex;flex-direction:column;align-items:center;margin-bottom:10px}
+.nd{background:var(--panel);border:1px solid #232a22;border-top:4px solid var(--y);padding:12px 18px;text-align:center;min-width:200px}
+.nd b{display:block;font:400 20px 'Anton',Impact,sans-serif;letter-spacing:.05em;color:var(--y);text-transform:uppercase}
+.nd.cp{border-top-color:var(--sage)}.nd.cp b{color:var(--sage-l)}.nd.dr{border-top-width:6px;min-width:260px}
+.stem,.lk{width:2px;background:var(--sage)}.stem{height:34px}.lk{height:22px}
+.tr{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;width:100%;position:relative;padding-top:34px}
+.tr::before{content:"";position:absolute;top:0;left:16.66%;right:16.66%;height:2px;background:var(--sage)}
+.br{display:flex;flex-direction:column;align-items:center;position:relative}.br .nd{width:100%}
+.br::before{content:"";position:absolute;top:-34px;left:calc(50% - 1px);width:2px;height:34px;background:var(--sage)}
+.dfg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.dfb{cursor:pointer;font:inherit;color:var(--text);background:var(--panel);border:1px solid #232a22;border-top:5px solid var(--k);padding:12px 6px;text-align:center;transition:background .2s,box-shadow .2s}
+.dfb b{display:block;font:400 40px/1 'Anton',Impact,sans-serif;color:var(--k)}.dfb span{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.dfb:hover,.dfb.on{background:var(--green-d)}.dfb.on{box-shadow:0 0 22px -4px var(--k)}
+.dfp{display:none}.dfp.on{display:block}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.chip{cursor:pointer;font:600 13px 'Rajdhani',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--text);background:var(--panel);border:1px solid #2f3a2c;padding:6px 16px;border-radius:20px}
+.chip:hover{border-color:var(--sage)}.chip.on{background:var(--sage);border-color:var(--sage);color:#0d0f14}
+.eqg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-bottom:18px}
+.eqc{background:var(--panel);border:1px solid #232a22;border-top:4px solid var(--k);padding:16px 18px}
+.eqc span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--k)}
+.eqc h3{font-size:22px;color:var(--title);margin:4px 0 6px}.eqc p{margin:0}
+nav a.l.act{color:var(--y);border-color:var(--y)}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(max-width:800px){.cx{grid-template-columns:1fr}}
+@media(max-width:700px){.tr{grid-template-columns:1fr;padding-top:0}.tr::before,.br::before,.stem{display:none}.dfg{grid-template-columns:repeat(2,1fr)}}
+.rd{max-height:400px}
+.cn{transition:none}.rd.anim .cn{transition:transform .6s cubic-bezier(.3,.8,.3,1)}
+.cn path{fill:rgba(255,224,102,.22);stroke:rgba(255,224,102,.6);stroke-width:1}
+.lgd{display:block;margin-top:12px;color:var(--muted);font-size:14px}
 </style>
 </head>
 <body>
@@ -136,11 +178,10 @@ footer{margin-top:80px;background:var(--green-d);color:var(--muted);text-align:c
 <section class="wrap" id="organigramme">
 <div class="eyebrow">02 · Structure</div><div class="hrow"><h2>Organi<span>gramme</span></h2><div class="gpw"><span class="gpl" id="gpl">Liste des grades</span><button class="gpa" id="gpi" type="button" aria-expanded="false" aria-label="Ouvrir ou fermer la liste des grades" title="Liste des grades">‹</button></div></div>
 <p class="lead">Chaîne de commandement et pôles de l’unité.</p>
-<div class="org">
-<div class="top"><b>Directeur SEB</b>David 60 – Ross</div>
-<div><b>Lead SEB</b>David 70 – Anderson</div><div><b>Lead SEB</b>David 80 – Riko</div><div><b>Lead SEB</b>David 90 – Santos</div>
-<div class="cp"><b>Captain</b>David 81 – Burlington</div><div class="cp"><b>Captain</b>David 71 – Att</div><div class="cp"><b>Captain</b>David 91 – Att</div>
-</div>
+<div class="tree"><div class="nd dr"><b>Directeur SEB</b>David 60 – Ross</div><div class="stem"></div><div class="tr">
+<div class="br"><div class="nd"><b>Lead SEB</b>David 70 – Anderson</div><div class="lk"></div><div class="nd cp"><b>Captain</b>David 71 – Att</div></div>
+<div class="br"><div class="nd"><b>Lead SEB</b>David 80 – Riko</div><div class="lk"></div><div class="nd cp"><b>Captain</b>David 81 – Burlington</div></div>
+<div class="br"><div class="nd"><b>Lead SEB</b>David 90 – Santos</div><div class="lk"></div><div class="nd cp"><b>Captain</b>David 91 – Att</div></div></div></div>
 <h3 style="margin:40px 0 18px;font-size:28px;color:var(--title)">Pôles <span style="color:var(--sage-l)">SEB</span></h3>
 <div class="g">
 <div class="card"><h3>Recruteur</h3><p>Le rôle des recruteurs est de vous faire passer les différents tests afin d’évaluer vos compétences et d’observer votre réaction face aux différentes situations auxquelles vous pourriez être confronté.</p><p><b>Pour rejoindre :</b></p><ul><li>David Operator</li><li>Ticket Direction SEB</li></ul></div>
@@ -166,8 +207,8 @@ footer{margin-top:80px;background:var(--green-d);color:var(--muted);text-align:c
 <section class="wrap" id="equipement">
 <div class="eyebrow">04 · Matériel</div><h2>Équi<span>pement</span></h2>
 <p class="lead">Matériel de base, tenues et règles d’usage de l’armement.</p>
+<div class="chips"><button class="chip on" type="button" data-f="all">Tout</button><button class="chip" type="button" data-f="nl">Non-létal</button><button class="chip" type="button" data-f="pr">Protection</button><button class="chip" type="button" data-f="a1">A1</button><button class="chip" type="button" data-f="a2">A2</button><button class="chip" type="button" data-f="a3">A3</button></div><div class="eqg"><div class="eqc" data-c="nl" style="--k:var(--c)"><span>Non-létal</span><h3>Matraque</h3><p>Contrôle rapproché et maintien de l’ordre sans létalité.</p></div><div class="eqc" data-c="nl" style="--k:var(--c)"><span>Non-létal</span><h3>Tazer</h3><p>Neutralisation à courte distance, sans létalité.</p></div><div class="eqc" data-c="pr" style="--k:var(--sage-l)"><span>Protection</span><h3>Gilet pare-balle</h3><p>Protection balistique pour les engagements armés.</p></div><div class="eqc" data-c="a1" style="--k:var(--g)"><span>A1</span><h3>Pistolet de combat</h3><p>Arme de poing de dotation.</p></div><div class="eqc" data-c="a2" style="--k:var(--o)"><span>A2</span><h3>SMG / Mitraillette</h3><p>Arme automatique compacte, soumise aux règles DEFCON et ROE.</p></div><div class="eqc" data-c="a3" style="--k:var(--r)"><span>A3 · Létal</span><h3>M4</h3><p>Carabine réservée aux agents formés. Uniquement si formation A3.</p></div></div>
 <div class="g">
-<div class="card"><h3>Matériel</h3><ul><li>Matraque</li><li>Tazer</li><li>Pistolet de combat</li><li>Gilet pare-balle</li><li>SMG / Mitraillette</li><li class="y">M4 (si formation A3)</li></ul></div>
 <div class="card"><h3>Les tenues</h3><p>Chaque tenue est spécifique et doit être adaptée à la situation rencontrée. Le choix dépend du type d’intervention, du niveau de risque et de la mission à effectuer.</p><p>Chaque agent porte une tenue appropriée afin d’assurer une intervention efficace, professionnelle et cohérente, en fonction des ordres des Leads et de la Direction.</p></div>
 <div class="card"><h3>Déploiement et utilisation de l’armement</h3><ul><li><b>Être équipé :</b> porter une arme ne donne pas automatiquement le droit de l’utiliser.</li><li><b>Sortir l’arme :</b> peut servir à anticiper ou dissuader une menace.</li><li><b>Utiliser l’arme :</b> uniquement si les ROE l’autorisent.</li></ul></div>
 <div class="card"><h3>Règle de proportionnalité</h3><p>L’armement doit être adapté à la menace rencontrée, dans le respect des ROE et des ordres du commandement.</p><ul><li><b>Menace armée :</b> appliquer les ROE adaptées.</li><li><b>Menace renforcée :</b> adapter l’armement si les conditions l’autorisent.</li><li><b>Dissuasion :</b> sortir une arme uniquement si le déploiement est autorisé.</li></ul><p><i>Ex : seul face à 2 individus armés de cat. A, je sors mon A2/A3. Avec 2 collègues face à 2 individus armés de cat. A, si j’avais mon A2 en main pour dissuasion, je la range et je sors mon A1 pour tirer si besoin.</i></p></div>
@@ -176,8 +217,8 @@ footer{margin-top:80px;background:var(--green-d);color:var(--muted);text-align:c
 
 <section class="wrap" id="colonnes">
 <div class="eyebrow">05 · Tactique</div><h2>Colonnes <span>d’assaut</span></h2>
-<p class="lead">Les formations de progression.</p>
-<div class="fm"><div class="fr"><h3>Colonne simple</h3><svg viewBox="0 0 130 110" role="img" aria-label="Schéma : Colonne simple"><circle cx="25" cy="55" r="15"/><circle cx="65" cy="55" r="15"/><circle cx="105" cy="55" r="15"/></svg><p>Mode de progression normal permettant de progresser rapidement, en utilisant un cheminement.</p></div><div class="fr"><h3>Colonne double</h3><svg viewBox="0 0 130 110" role="img" aria-label="Schéma : Colonne double"><circle cx="38" cy="35" r="15"/><circle cx="92" cy="35" r="15"/><circle cx="65" cy="80" r="15"/></svg><p>Mode de progression normal favorisant une puissance de feu supérieure au dépend de la discrétion.</p></div><div class="fr"><h3>Ligne</h3><svg viewBox="0 0 130 110" role="img" aria-label="Schéma : Ligne"><circle cx="65" cy="20" r="15"/><circle cx="65" cy="55" r="15"/><circle cx="65" cy="90" r="15"/></svg><p>Mode de progression à adopter à l’approche de l’ENI, avant d’effectuer un bond sur ordre du chef d’équipe pour franchir un découvert.</p></div><div class="fr"><h3>Triangle base avant</h3><svg viewBox="0 0 130 110" role="img" aria-label="Schéma : Triangle base avant"><circle cx="95" cy="20" r="15"/><circle cx="45" cy="55" r="15"/><circle cx="95" cy="90" r="15"/></svg><p>En tête d’un groupe, à l’approche de l’ENI, permet une réaction par le feu importante vers l’avant et latéralement au dépend de la discrétion.</p></div><div class="fr"><h3>Triangle pointe avant</h3><svg viewBox="0 0 130 110" role="img" aria-label="Schéma : Triangle pointe avant"><circle cx="40" cy="20" r="15"/><circle cx="90" cy="55" r="15"/><circle cx="40" cy="90" r="15"/></svg><p>En tête d’un groupe, à l’approche de l’ENI, permet en ménageant la discrétion d’avoir une réaction par le feu importante vers l’avant et latéralement au dépend des secteurs d’ouverture de feu ainsi que de l’élément de tête.</p></div></div>
+<p class="lead">Sélectionne une formation pour voir le placement des agents sur le radar tactique.</p>
+<div class="cx"><div class="fl"><button class="fb" type="button"><b>1. Colonne simple</b><small>Discrétion & vitesse</small></button><button class="fb" type="button"><b>2. Colonne double</b><small>Puissance de feu</small></button><button class="fb" type="button"><b>3. Ligne</b><small>Franchissement</small></button><button class="fb" type="button"><b>4. Triangle base avant</b><small>Assaut frontal</small></button><button class="fb" type="button"><b>5. Triangle pointe avant</b><small>Infiltration / approche</small></button></div><div class="fv"><svg class="rd" viewBox="0 0 320 290" role="img" aria-label="Radar tactique"><circle class="ring" cx="160" cy="175" r="60"/><circle class="ring" cx="160" cy="175" r="120"/><path class="ring" d="M0 175h320M160 0v290"/><circle cx="160" cy="38" r="14" fill="rgba(255,64,64,.12)" stroke="var(--r)" stroke-width="2" stroke-dasharray="3 3"/><text x="182" y="43" fill="var(--r)" font-size="13" font-weight="700" font-family="Rajdhani,sans-serif">ENI</text><path d="M304 270V238m-6 8l6-8 6 8" fill="none" stroke="var(--sage-l)" stroke-width="2"/><text x="304" y="285" fill="var(--sage-l)" font-size="10" font-weight="600" letter-spacing="2" text-anchor="end" font-family="Rajdhani,sans-serif">PROGRESSION</text><g class="ag" id="a0"><g class="cn"><path d="M0 0L-37-69A78 78 0 0 1 37-69Z"/></g><circle r="16"/><text>1</text></g><g class="ag" id="a1"><g class="cn"><path d="M0 0L-37-69A78 78 0 0 1 37-69Z"/></g><circle r="16"/><text>2</text></g><g class="ag" id="a2"><g class="cn"><path d="M0 0L-37-69A78 78 0 0 1 37-69Z"/></g><circle r="16"/><text>3</text></g></svg><h3 id="fn"></h3><span class="tg" id="ft"></span><p id="fd"></p><small class="lgd">Zone jaune : secteur de vision de chaque agent (à vérifier avec vos règles).</small></div></div>
 <div class="g">
 <div class="card"><h3 class="y">Objectifs</h3><ul><li>Adaptation sur le terrain selon l’ennemi et la mission</li><li>Capacité de réaction optimale</li><li>Sécurité assurée pour le groupe</li><li>Progression mutuelle de tous les agents</li><li>Prise d’initiative rapide pour le chef de colonne</li></ul></div>
 <div class="card"><h3 class="y">Points importants</h3><p><b>Vitesse / discrétion / réactivité</b></p><ul><li>Rester sur une progression rapide pour éviter l’embuscade</li><li>Rester attentif de son environnement pour la sécurité du groupe</li><li>Utiliser le dispositif à votre avantage pour garantir une efficacité offensive constante</li><li>Faire de la communication le maître mot pour garantir un contrôle sans faille des effectifs, de la mission et de la menace</li></ul></div>
@@ -187,10 +228,7 @@ footer{margin-top:80px;background:var(--green-d);color:var(--muted);text-align:c
 <section class="wrap" id="deploiement">
 <div class="eyebrow">06 · Niveaux d’alerte</div><h2>Dé<span>ploiement</span></h2>
 <p class="lead">Conditions de déploiement selon le DEFCON.</p>
-<div class="card"><h3 class="y">DEFCON 5 – Situation normale</h3><ul class="dc" style="color:var(--title)"><li>Pas de déploiement systématique.</li><li>Sortie uniquement sur opération, besoin spécifique ou ordre EM.</li></ul></div>
-<div class="card"><h3 class="y">DEFCON 4 – Vigilance renforcée</h3><p class="r dc">3 patrouilles PPD minimum → le S.E.B devient la 4e patrouille. Déploiement en Adam / Tango.</p><p class="gr dc">1 A2 maximum en main par patrouille, uniquement pour dissuasion, le reste à l’A1.</p></div>
-<div class="card"><h3 class="y">DEFCON 3 – Menace élevée</h3><p class="r dc">3 patrouilles PPD minimum → le S.E.B devient la 4e patrouille. Déploiement prioritaire en Tango / Xray ou deux Adam mais en convoi.</p><p class="gr dc">1 A3 maximum par patrouille en main, uniquement pour dissuasion, le reste à l’A2.</p><p class="o dc">À 2 agents : Adam temporaire, 3e agent à trouver rapidement.</p></div>
-<div class="card"><h3 class="y">DEFCON 2 – Menace critique</h3><p class="r dc">Sortie SEB automatique. Déploiement en Tango / Xray.</p><p class="o dc">2 patrouilles SEB minimum.</p><p class="gr dc">A3 uniquement pour les agents formés, sinon A2.</p></div>
+<div class="dfg"><button class="dfb on" type="button" style="--k:var(--g)"><b>5</b><span>Situation normale</span></button><button class="dfb" type="button" style="--k:var(--y)"><b>4</b><span>Vigilance renforcée</span></button><button class="dfb" type="button" style="--k:var(--o)"><b>3</b><span>Menace élevée</span></button><button class="dfb" type="button" style="--k:var(--r)"><b>2</b><span>Menace critique</span></button></div><div class="card dfp on" style="--k:var(--g);border-left-color:var(--k)"><h3 style="color:var(--k)">DEFCON 5 – Situation normale</h3><ul class="dc" style="color:var(--title)"><li>Pas de déploiement systématique.</li><li>Sortie uniquement sur opération, besoin spécifique ou ordre EM.</li></ul></div><div class="card dfp" style="--k:var(--y);border-left-color:var(--k)"><h3 style="color:var(--k)">DEFCON 4 – Vigilance renforcée</h3><p class="r dc">3 patrouilles PPD minimum → le S.E.B devient la 4e patrouille. Déploiement en Adam / Tango.</p><p class="gr dc">1 A2 maximum en main par patrouille, uniquement pour dissuasion, le reste à l’A1.</p></div><div class="card dfp" style="--k:var(--o);border-left-color:var(--k)"><h3 style="color:var(--k)">DEFCON 3 – Menace élevée</h3><p class="r dc">3 patrouilles PPD minimum → le S.E.B devient la 4e patrouille. Déploiement prioritaire en Tango / Xray ou deux Adam mais en convoi.</p><p class="gr dc">1 A3 maximum par patrouille en main, uniquement pour dissuasion, le reste à l’A2.</p><p class="o dc">À 2 agents : Adam temporaire, 3e agent à trouver rapidement.</p></div><div class="card dfp" style="--k:var(--r);border-left-color:var(--k)"><h3 style="color:var(--k)">DEFCON 2 – Menace critique</h3><p class="r dc">Sortie SEB automatique. Déploiement en Tango / Xray.</p><p class="o dc">2 patrouilles SEB minimum.</p><p class="gr dc">A3 uniquement pour les agents formés, sinon A2.</p></div>
 </section>
 
 <footer>S.E.B · Sheriff — Guide interne<br><span style="color:var(--sage-l)">Développé par David 94</span></footer>
@@ -219,6 +257,21 @@ new IntersectionObserver(function(en){var v=en[0].isIntersecting;p.classList.tog
 (function(){var b=document.getElementById('sp'),d=document.documentElement;
 function u(){var m=d.scrollHeight-d.clientHeight;b.style.width=(m>0?d.scrollTop/m*100:0)+'%'}
 addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u()})();
+</script>
+<script>
+(function(){var F=[{"n": "Colonne simple", "t": "Discrétion & vitesse", "d": "Mode de progression normal permettant de progresser rapidement, en utilisant un cheminement.", "p": [[160, 255], [160, 178], [160, 101]], "a": [180, 70, 0]}, {"n": "Colonne double", "t": "Puissance de feu", "d": "Mode de progression normal favorisant une puissance de feu supérieure au dépend de la discrétion.", "p": [[128, 230], [128, 126], [200, 178]], "a": [-130, -25, 60]}, {"n": "Ligne", "t": "Franchissement", "d": "Mode de progression à adopter à l’approche de l’ENI, avant d’effectuer un bond sur ordre du chef d’équipe pour franchir un découvert.", "p": [[104, 178], [160, 178], [216, 178]], "a": [-25, 0, 25]}, {"n": "Triangle base avant", "t": "Assaut frontal", "d": "En tête d’un groupe, à l’approche de l’ENI, permet une réaction par le feu importante vers l’avant et latéralement au dépend de la discrétion.", "p": [[104, 121], [160, 217], [216, 121]], "a": [-35, 0, 35]}, {"n": "Triangle pointe avant", "t": "Infiltration / approche", "d": "En tête d’un groupe, à l’approche de l’ENI, permet en ménageant la discrétion d’avoir une réaction par le feu importante vers l’avant et latéralement au dépend des secteurs d’ouverture de feu ainsi que de l’élément de tête.", "p": [[104, 226], [160, 130], [216, 226]], "a": [-65, 0, 65]}],fb=document.querySelectorAll('.fb'),ag=[0,1,2].map(function(k){return document.getElementById('a'+k)}),rd=document.querySelector('.rd'),cn=document.querySelectorAll('.cn');
+function sf(i){var f=F[i];fb.forEach(function(b,k){b.classList.toggle('on',k==i)});f.p.forEach(function(p,k){ag[k].style.transform='translate('+p[0]+'px,'+p[1]+'px)'});f.a.forEach(function(a,k){cn[k].style.transform='rotate('+a+'deg)'});document.getElementById('fn').textContent=f.n;document.getElementById('ft').textContent=f.t;document.getElementById('fd').textContent=f.d}
+fb.forEach(function(b,k){b.onclick=function(){sf(k)}});sf(0);requestAnimationFrame(function(){requestAnimationFrame(function(){rd.classList.add('anim')})});
+var db=document.querySelectorAll('.dfb'),dp=document.querySelectorAll('.dfp');
+db.forEach(function(b,k){b.onclick=function(){db.forEach(function(x,j){x.classList.toggle('on',j==k)});dp.forEach(function(x,j){x.classList.toggle('on',j==k)})}});
+var ch=document.querySelectorAll('.chip'),ec=document.querySelectorAll('.eqc');
+ch.forEach(function(b){b.onclick=function(){ch.forEach(function(x){x.classList.toggle('on',x===b)});ec.forEach(function(c){c.style.display=(b.dataset.f==='all'||c.dataset.c===b.dataset.f)?'':'none'})}});
+var ls=document.querySelectorAll('nav a.l');
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)ls.forEach(function(a){a.classList.toggle('act',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section[id]').forEach(function(s){so.observe(s)});
+var rv=new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.card:not(.dfp),.nd,.fv').forEach(function(x){x.classList.add('rv');rv.observe(x)});
+})();
 </script>
 </body>
 </html>
